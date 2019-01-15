@@ -1,21 +1,81 @@
-// TurnBasedStrategy-Yash.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+//===================================================== Headers =================================================
 #include "pch.h"
+#include "pawn.h"
+
 #include <iostream>
+#include <chrono>
+#include <string>
+
+//================================================================================================================
+
+using namespace std;
+using namespace std::chrono;
+
+
+bool bGamePlay = true;
+
+void ShowMenu()
+{
+	cout << "Enter:" << endl;
+	cout << "1) Start Game" << endl;
+	cout << "2) Exit Game" << endl;
+	cout << "Choice: ";
+}
+
+void beginGamePlay() {}
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	int iChoice;
+	bool bChoiceCorrect = false;
+
+	cout << "Hello! Welcome to a turn based strategy game." << endl;
+	cout << "It is a mix of pokemon and rock, paper and scissors with a twist." << endl;
+	cout << "It is Rock, Paper, Scissors, Spock and Lizard \n" << endl;
+
+	cout << "**************************** Instructions ************************\n" << endl;
+
+	cout << "Both the player get to select any five pawn from five categories. " << endl;
+	cout << "All the categories have different strengths and weaknesses. \n" << endl;
+	cout << "All the pawn start with health = 100 and different pawn has different attack strength" << endl;
+	
+	cout << "*******************************************************************\n" << endl;
+	
+	while (bChoiceCorrect = false)
+	{
+		ShowMenu();
+		cin >> iChoice;
+	}
+	
+	switch (iChoice)
+	{
+		case 0:
+			beginGamePlay();
+			break;
+
+		case 1:
+			bGamePlay = false;
+			break;
+	}
+
+
+
+	system("PAUSE");
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void beginGamePlay() 
+{
+	while (bGamePlay = true)
+	{
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+	}
+}
+
+
+void GetPlayerData()
+{
+
+}
+
+//================================================================================================================
