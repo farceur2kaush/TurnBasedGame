@@ -55,6 +55,7 @@ int main()
 
 		case 1:
 			bGamePlay = false;
+			beginGamePlay();
 			break;
 	}
 
