@@ -11,6 +11,8 @@ public:
 	Pawn();
 	~Pawn();
 
+	int type[5][5];
+
 	int getHealth() const { return iHealth; }
 	void setHealth(int h) 
 	{ 
@@ -18,15 +20,25 @@ public:
 	}
 
 	int getDamage() const { return iDamage; }
-	void setHealth(int d) 
+	void setDamage(int d) 
 	{ 
 		iDamage = d; 
 	}
 
-	void attack() { }
+	int getPawnType() const { return iRow, iColumn; }
+	void setPawnType(int r,int c)
+	{
+		iRow = r;
+		iColumn = c;
+	}
+
+
 
 private:
-	int iHealth;
-	int iDamage;
+	int		iHealth;
+	int		iDamage;
+	int	    iRow;
+	int		iColumn;
 };
 
+//======================================================================
