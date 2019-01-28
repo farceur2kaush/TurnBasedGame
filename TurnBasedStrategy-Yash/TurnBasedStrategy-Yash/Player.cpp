@@ -30,9 +30,14 @@ Player Player::inputPdata(Player player)
 Player Player::displayPdata(Player player)
 {
 	cout << endl;
-	cout << "Players Attribute: " << endl;
-	cout << "\t Name		:	" << player.sPname << endl;
-	cout << "\t Pawns Left	:	" << player.iPawnsLeft << endl;;
+	cout << "Players Attribute	: " << endl;
+	cout << "\t Name			:	" << player.sPname << endl;
+	cout << "\t Pawns Left		:	" << player.iPawnsLeft << endl;
+
+	if (player.iPawnsLeft == 0)
+	{
+		cout << "\t " <<player.sPname << "Lost" << endl;;
+	}
 
 	cout << endl;
 	return player;
