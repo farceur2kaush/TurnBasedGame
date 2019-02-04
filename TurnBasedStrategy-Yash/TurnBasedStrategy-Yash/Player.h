@@ -2,11 +2,12 @@
 
 //=======HEADERS===============================================================
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <stdio.h>
-//=============================================================================
 
-using namespace std;
+#include "Pawn.h"
+//=============================================================================
 
 class Player
 {
@@ -14,8 +15,8 @@ public:
 	Player();
 	~Player();
 
-	string getName() const { return sPname; }
-	void setName(string n)
+	std::string getName() const { return sPname; }
+	void setName(std::string n)
 	{
 		sPname = n;
 	}
@@ -33,8 +34,8 @@ public:
 	Player displayPdata(Player player);
 
 private:
-	string	sPname;
-	int		iPawnsLeft;
+	std::string		sPname;
+	int				iPawnsLeft;
 	
 };
 //==============================================================================

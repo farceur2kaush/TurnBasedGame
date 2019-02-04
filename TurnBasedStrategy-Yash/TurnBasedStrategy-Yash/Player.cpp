@@ -12,34 +12,32 @@ Player::Player()
 Player::~Player()
 {
 }
-Player Player::inputPdata(Player player)
-{
-	return Player();
-}
+
 //====================================FUNCTIONS=========================================================
 
 
 Player Player::inputPdata(Player player)
 {
-	cout << "\t Enter Player Name				:	";
-	cin >> player.sPname;
-	cout << endl;
-
+	std::cout << "Enter Player Name				:	";
+	std::cin >> player.sPname;
+	//getline(std::cin, player.sPname);
+	std::cout << std::endl;
+	return player;
 }
 
 Player Player::displayPdata(Player player)
 {
-	cout << endl;
-	cout << "Players Attribute	: " << endl;
-	cout << "\t Name			:	" << player.sPname << endl;
-	cout << "\t Pawns Left		:	" << player.iPawnsLeft << endl;
+	std::cout << std::endl;
+	std::cout << "Players Attribute	: " << std::endl;
+	std::cout << std::setw(20) <<"Name				:	" << player.sPname << std::endl;
+	std::cout << std::setw(20) <<"Pawns Alive		:	" << player.iPawnsLeft << std::endl;
 
 	if (player.iPawnsLeft == 0)
 	{
-		cout << "\t " <<player.sPname << "Lost" << endl;;
+		std::cout << "\t " <<player.sPname << "Lost" << std::endl;
 	}
 
-	cout << endl;
+	std::cout << std::endl;
 	return player;
 }
 

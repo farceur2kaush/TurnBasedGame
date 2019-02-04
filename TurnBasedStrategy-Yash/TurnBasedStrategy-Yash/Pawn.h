@@ -2,8 +2,9 @@
 
 //==================HEADERS=============================================
 #include <iostream>
+#include <iomanip>
 #include <string>
-#include <cstdio>
+#include <stdio.h>
 //======================================================================
 class Pawn
 {
@@ -26,19 +27,28 @@ public:
 	}
 
 	int getPawnType() const { return iRow, iColumn; }
-	void setPawnType(int r,int c)
+	void setPawnType(int r, int c)
 	{
 		iRow = r;
 		iColumn = c;
 	}
 
+	int getPtype() const { return iPtype[5]; }
+	void setDamage(int Ptype[5])
+	{
+		iPtype[5] = Ptype[5];
+	}
 
+	void displayPawntypes();
+
+	Pawn selectPawn(Pawn pawn);
 
 private:
 	int		iHealth;
 	int		iDamage;
 	int	    iRow;
 	int		iColumn;
+	int		iPtype[5];
 };
 
 //======================================================================
