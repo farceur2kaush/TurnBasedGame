@@ -41,7 +41,7 @@ public:
 
 	void displayPawntypes();
 
-	Pawn selectPawn(Pawn pawn);
+	Pawn selectPawn(Pawn pawn, int x);
 
 private:
 	int		iHealth;

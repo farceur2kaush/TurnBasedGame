@@ -37,48 +37,47 @@ void Pawn::displayPawntypes()
 }
 
 // this function sets the value for pawn and also stores the index to be used later for attack
-Pawn Pawn::selectPawn(Pawn pawn)
+Pawn Pawn::selectPawn(Pawn pawn, int x)
 {
-	for (int i = 0; i < 5; i++)
+	char j='0';
+
+	
+	while (j <= '0' || j > '5')
 	{
-		int j;
-
-	LOOP:std::cout << i + 1 << " Pawn type: ";
+		std::cout << x + 1 << " Pawn type: ";
 		std::cin >> j;
-
 		switch (j)
 		{
-			case 1: 
-				std::cout << "Rock Selected" << std::endl;
-				iPtype[i] = 0;
-				break;
+		case '1':
+			std::cout << "Rock Selected" << std::endl;
+			iPtype[x] = 0;
+			break;
 
-			case 2:
-				std::cout << "Paper Selected" << std::endl;
-				iPtype[i] = 1;
-				break;
+		case '2':
+			std::cout << "Paper Selected" << std::endl;
+			iPtype[x] = 1;
+			break;
 
-			case 3:
-				std::cout << "Scissors Selected" << std::endl;
-				iPtype[i] = 2;
-				break;
+		case '3':
+			std::cout << "Scissors Selected" << std::endl;
+			iPtype[x] = 2;
+			break;
 
-			case 4:
-				std::cout << "Spock Selected" << std::endl;
-				iPtype[i] = 3;
-				break;
+		case '4':
+			std::cout << "Spock Selected" << std::endl;
+			iPtype[x] = 3;
+			break;
 
-			case 5:
-				std::cout << "Lizard Selected" << std::endl;
-				iPtype[i] = 4;
-				break;
+		case '5':
+			std::cout << "Lizard Selected" << std::endl;
+			iPtype[x] = 4;
+			break;
 
-			default:
+		default:
 			std::cout << "Incorrect Input, try again" << std::endl;
-			goto	LOOP;
 		}
-		
 	}
+	   	
 	return pawn;
 }
 

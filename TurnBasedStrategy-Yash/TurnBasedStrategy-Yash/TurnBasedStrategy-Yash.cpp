@@ -6,9 +6,6 @@
 #include "Player.h"
 
 #include <iostream>
-#include <iomanip>
-#include <chrono>
-#include <string>
 #include <chrono>
 #include <thread>
 //================================================================================================================
@@ -19,41 +16,46 @@ using namespace std::chrono_literals;	// ns, us, ms, s, h, etc.
 using std::chrono::system_clock;
 
 bool bGamePlay = true;
+
 void beginGamePlay();
+void Instructions();
 
 void ShowMainMenu()
 {
-	char a;
-	std::cout << std::endl <<"Enter:"	<< std::endl;
-	std::cout << "\t1) Start Game"		<< std::endl;
-	std::cout << "\t2) Instructions"		<< std::endl;
-	std::cout << "\t3) Exit Game"			<< std::endl;
+	char a = '1';
 	
-LOOP:	std::cout << "Choice 1 or 2: ";
-	std::cin >> a;
-	if (a == '1')
+	std::cout << std::endl << "Enter:" << std::endl;
+	std::cout << "\t1) Start Game" << std::endl;
+	std::cout << "\t2) Instructions" << std::endl;
+	std::cout << "\t3) Exit Game" << std::endl;
+
+	while (a <= '1' || a > '3')
 	{
-		char ch = 'y';
-		while (ch != 'n')
+		std::cout << "Choice 1, 2 or 3: ";
+		std::cin >> a;
+		if (a == '1')
 		{
-			beginGamePlay();
+			while (bGamePlay != false)
+			{
+				beginGamePlay();
+			}
+		}
+		else if (a == '2')
+		{
+			Instructions();
+		}
+		else if (a == '3')
+		{
+			std::cout << "BYE!" << std::endl;
+			sleep_until(system_clock::now() + 2s);		// 2 seconds delay
+			std::_Exit;
+		}
+		else
+		{
+			std::cout << "Wrong Input, Try Again" << std::endl;
 		}
 	}
-	else if (a == '2')
-	{
 
-	}
-	else if (a == '3')
-	{
-		std::cout << "BYE!"<<std::endl;
-		sleep_until(system_clock::now() + 2s);		// 2 seconds delay
-		std::_Exit;
-	}
-	else
-	{
-		std::cout << "Wrong Input, Try Again" << std::endl;
-		goto LOOP;
-	}
 		
 }
 
@@ -81,8 +83,6 @@ int main()
 	// clear screen and bring to the Main Menu
 	ShowMainMenu();
 	
-
-	
 	system("PAUSE");
 	return 0;
 }
@@ -99,14 +99,23 @@ void beginGamePlay()
 
 		for (int j = 0; j < 5; j++)
 		{
-			pawn[j].selectPawn(pawn[j]);
+			pawn[j].selectPawn(pawn[j], j);
 		}
-		
 	}
-	
-	std::cout << "****************INPUT STARTS HERE**************************" << std::endl;
-	player[1] = player[1].inputPdata(player[1]);
 }
 
+void Instructions()
+{
+	std::cout << "....." << std::endl;
+	std::cout << "....." << std::endl;
+	std::cout << "....." << std::endl;
+	std::cout << "....." << std::endl;
+	std::cout << "....." << std::endl;
+	std::cout << "....." << std::endl;
+	std::cout << "....." << std::endl;
+
+	sleep_until(system_clock::now() + 10s);		// 10 seconds delay
+	ShowMainMenu();
+}
 
 //================================================================================================================

@@ -22,10 +22,7 @@ public:
 	}
 
 	int getPawnLeft() const { return iPawnsLeft; }
-	void setPawnLeft(int l)
-	{
-		iPawnsLeft = l;
-	}
+
 
 	//Function to input player data
 	Player inputPdata(Player player);
